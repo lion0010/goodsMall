@@ -11,11 +11,11 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      "/users": {
-        target: "http://localhost:3000"
-      },
-      "/goods": {
-        target: "http://localhost:3000"
+      '/api/**': {
+        target: 'http://localhost:3000',
+        pathRewrite: {
+          '^/api': '/'
+        }
       }
     },
 
@@ -52,7 +52,7 @@ module.exports = {
     // (https://github.com/webpack/css-loader#sourcemaps)
     // In our experience, they generally work as expected,
     // just be aware of this issue when enabling this option.
-    cssSourceMap: false,
+    cssSourceMap: false
   },
 
   build: {

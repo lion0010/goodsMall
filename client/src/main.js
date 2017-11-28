@@ -18,7 +18,8 @@ import VueInfiniteScroll from 'vue-infinite-scroll'
 import { currency } from './util/currency'
 // 引入App组件
 import App from './App'
-
+// 引入apiConfig
+import apiConfig from '../config/api.config'
 // 引入基础的CSS样式
 import './assets/css/base.css'
 // 引入结算的CSS样式
@@ -34,6 +35,7 @@ Vue.use(VueLazyload, {
   loading: 'static/loading-svg/loading-bars.svg',
   try: 3
 })
+axios.defaults.baseURL = apiConfig.baseUrl
 // 注册全局的过滤器currency
 Vue.filter('currency', currency)
 // 关闭产品提示，现在在开发环境中

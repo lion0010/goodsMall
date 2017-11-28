@@ -15,8 +15,11 @@ import Orders from '@/pages/Orders'
 import OrderConfirm from '@/pages/OrderConfirm'
 // 引入订单成功组件
 import OrderSuccess from '@/pages/OrderSuccess'
+// 引入apiConfig
+import apiConfig from '../config/api.config'
 // 使用VueRouter组件
 Vue.use(Router)
+axios.defaults.baseURL = apiConfig.baseUrl
 // 导出VueRouter的实例
 export default new Router({
   // mode: 'history',
